@@ -30,22 +30,28 @@ export class MovieView extends React.Component {
           
         <div className="value">
           {movie.filmingLocations.map((location, index) => (
-            <div key={index}>
+            <div key={location.name}>
             <p>City: {location.name}</p>
-            <p>Scene: {location.locations.scene}</p>
+            <div>Scene: {location.locations.map((pinPoint, index) => (
+              <div key={pinPoint}>{pinPoint.name} - {pinPoint.location.map((latLong, index) => (
+                <p key={index}> {latLong}</p>
+              ))}</div>
+              
+            ) )}</div>
           {/* This is where the Map embed will go*/}
-            <div> Lat-Long : {location.locations.location.map( geo => <p>{geo}</p>)}</div>
+            
           
             </div>
           ))}
         
         </div>
   
-         </div>
-        
         </div>
-        <button onClick={() => { onBackClick(null); }}>Back</button>
-       </div>
+        
+      </div>
+      <button key={movie} onClick={() => { onBackClick(null); }}>Back</button>
+    </div>
     );
   }
+
 }
