@@ -1,4 +1,7 @@
 import React from "react";
+import "./movie-view.scss";
+import PropTypes from "prop-types";
+
 
 export class MovieView extends React.Component {
 
@@ -27,23 +30,18 @@ export class MovieView extends React.Component {
           <div>
 
           {/* Might need to either aggrigate or restructure DB so that filmingLocations is its own collection */}
-          
-        <div className="value">
+           {/* The following section is where the Map embed will go*/}
+        <div className="value">          
           {movie.filmingLocations.map((location, index) => (
             <div key={location.name}>
             <p>City: {location.name}</p>
             <div>Scene: {location.locations.map((pinPoint, index) => (
-              <div key={pinPoint}>{pinPoint.name} - {pinPoint.location.map((latLong, index) => (
-                <p key={index}> {latLong}</p>
-              ))}</div>
-              
+              <div key={index}>{pinPoint.name} - {pinPoint.location.map((latLong, index) => (
+                <p key={index}>{latLong}</p>
+              ))}</div>             
             ) )}</div>
-          {/* This is where the Map embed will go*/}
-            
-          
             </div>
-          ))}
-        
+          ))}        
         </div>
   
         </div>
@@ -55,3 +53,31 @@ export class MovieView extends React.Component {
   }
 
 }
+
+MovieView.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    genre: PropTypes.shape({
+      Name: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired
+    }),
+    director: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      bio: PropTypes.string.isRequired
+    }),
+    imageURL: PropTypes.string.isRequired,
+    setting: PropTypes.shape({
+      location: PropTypes.string.isRequired
+    }).isRequired,
+    filmingLocations: PropTypes.arrayOf(
+      PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          location: PropTypes.arrayOf(
+          PropTypes.string.isRequired,
+          PropTypes.string.isRequired
+
+          )
+      })
+    )
+  }).isRequired
+};
