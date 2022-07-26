@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import MainView  from "./components/main-view/main-view";
-
+import Container from 'react-bootstrap/Container';
 // Import Style
 import "./index.scss";
 
@@ -12,9 +12,9 @@ class MyFlixApplication extends React.Component {
 
   render() {
     return (
-      <div className="my-flix">
-        <MainView  />
-      </div>
+      <Container>
+        <MainView />
+      </Container>
     );
   }
 }
