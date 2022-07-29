@@ -30,8 +30,14 @@ export default class MainView extends React.Component {
         })
         .catch(error => {
           console.log(error);
-        });
+        });       
     }
+
+    
+  
+
+    
+
     setSelectedMovie(newSelectedMovie) {
       this.setState({
         selectedMovie: newSelectedMovie
@@ -72,11 +78,13 @@ export default class MainView extends React.Component {
           {selectedMovie
             ? 
                 <Col md={8}>
-                  <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                  <MovieView  movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
                 </Col>              
             : movies.map(movie => (            
-                <Col md={6}>
-                  <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
+                <Col md={6} lg={4}  >
+
+                  <MovieCard style={{height: 90 + "%"}} key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }}/>
+                
                 </Col>
              
             ))

@@ -2,20 +2,7 @@ import React, { useState, useEffect } from "react";
 import { GoogleMap, InfoWindow, LoadScript, Marker} from "@react-google-maps/api";
 let token = config.MY_API_TOKEN
 const MapComponent = ({movie}) => {
-/*
-//structure reference for google-maps-react
-    const initialMarkers = [
-        {
-            location: {
-                lat: 27.733265818456957,
-                lng: -82.64781687307281
-            },
-            name: { color: "white", text: "HERE" },
-            draggable: false
-        }
-    ];
 
-*/
 // empty marker arrays
 const initialMarkers = [{
     name:"",

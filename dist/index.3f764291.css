@@ -1,4 +1,9 @@
 
+#pic {
+  max-width: 80%;
+  max-height: 90%;
+  align-self: center;
+}
 .row-list {
   color: black;
 }

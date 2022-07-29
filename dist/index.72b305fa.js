@@ -456,7 +456,7 @@ function hmrAcceptRun(bundle, id) {
 
 },{}]},["jB2tU"], null, "parcelRequire7570")
 const config = {
-    MY_API_TOKEN: 'AIzaSyADmX2QCVGszsvhbinj21mH-Db92M9GQ7c'
+    MY_API_TOKEN: 'AIzaSyABbaEQenuYHQwasoLxCBC-BzCqNkjTZCk'
 };
 
 //# sourceMappingURL=index.72b305fa.js.map

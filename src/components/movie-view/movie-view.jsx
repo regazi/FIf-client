@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import  MapComponent  from '../map-card/map-card';
 import Container from 'react-bootstrap/Container';
 import { Card, CardGroup, ListGroup } from 'react-bootstrap';
-import Row from 'react-bootstrap/Row';
 
 export class MovieView extends React.Component {
 
@@ -16,8 +15,7 @@ export class MovieView extends React.Component {
       <Container className="movie-view">
          <CardGroup >
           <Card className="bg-light">
-            <Card.Img variant="top" src={movie.imageURL} />
-
+            <Card.Img style={{width: 75 + "%", margin: "auto"}} variant="top" className="d-block card-img-top img-thumbnail" src={movie.imageURL} crossorigin="true" />
             <Card.Title className="align-self-center">{movie.title}</Card.Title>
             <Card.Body>
             <ListGroup>
@@ -30,40 +28,20 @@ export class MovieView extends React.Component {
               <Card.Text className="p-2">{movie.setting.location}</Card.Text>
             </ListGroup.Item>
             <ListGroup.Item className="d-flex flex-row">
-            <Card.Subtitle className="p-2 flex-grow-1">Cities:</Card.Subtitle>
-            {movie.filmingLocations.map((location, index) => (
-              <Card.Text className="p-2">{location.name}</Card.Text>
-            ))}
-              </ListGroup.Item>
-             
-
-          
-     {/*
-        <div className="value">          
-          {movie.filmingLocations.map((location, index) => (
-            <div key={location.name}>
-              <p>City: {location.name}</p>
-              <div>Scene: {location.locations.map((pinPoint, index) => (
-              <div key={index}>{pinPoint.name} 
-              </div>             
-            ))}</div>
-            
-            </div>
-            
-          ))}        
-        </div>
-        */}
-       
-       
-      <ListGroup.Item className="bg-white"> 
-        <ListGroup.Item className="bg-light"> 
-          <Card.Subtitle className="label">Filming Locations {}</Card.Subtitle>
-          </ListGroup.Item>
-          <MapComponent  movie={movie}  />
-      </ListGroup.Item>
-     </ListGroup>
-     </Card.Body>
-      <Button varient="primary" type="button" onClick={() => { onBackClick(null); }}>Back</Button>
+              <Card.Subtitle className="p-2 flex-grow-1">Cities:</Card.Subtitle>
+              {movie.filmingLocations.map((location, index) => (
+                <Card.Text className="p-2">{location.name}</Card.Text>
+              ))}
+            </ListGroup.Item>
+            <ListGroup.Item className="bg-white"> 
+            <ListGroup.Item className="bg-light"> 
+            <Card.Subtitle className="label">Filming Locations {}</Card.Subtitle>
+            </ListGroup.Item>
+              <MapComponent  movie={movie}  />
+            </ListGroup.Item>
+          </ListGroup>
+        </Card.Body>
+        <Button varient="primary" type="button" onClick={() => { onBackClick(null); }}>Back</Button>
       </Card>
       </CardGroup>
     </Container>
@@ -72,3 +50,13 @@ export class MovieView extends React.Component {
 
 }
 
+MovieView.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string.isRequired,    
+    imageURL: PropTypes.string.isRequired,
+    setting: PropTypes.shape({
+      location: PropTypes.string.isRequired
+    }).isRequired
+  }).isRequired,
+  onBackClick: PropTypes.func.isRequired
+};

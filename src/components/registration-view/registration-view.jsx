@@ -21,7 +21,7 @@ export function RegistrationView(props) {
 
   return (
     <Container fluid className="main-container">
-    <Row className="d-flex flex-row justify-content-center">
+    <Row className="d-flex flex-row justify-content-center p-2">
       <Col xs={12} sm={6} md={4} lg={4} className="justify-content-center">
       <CardGroup xs={12} sm={6} md={4} lg={4} className="caCard">
         <Card className="item-align-center">

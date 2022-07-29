@@ -30,12 +30,12 @@ export function LoginView(props) {
   
   return (
     <Container fluid className="main-container">
-    <Row className="d-flex flex-row justify-content-center">
+    <Row className="d-flex flex-row justify-content-center p-2">
       <Col xs={12} sm={6} md={4} lg={4} className="justify-content-center">
-      <CardGroup>
+      <CardGroup xs={12} sm={6} md={4} lg={4}>
         <Card>
         <Card.Title className="align-self-center">Login</Card.Title>
-    <Form>
+    <Form className="align-self-center">
       <Form.Group controlId="formUsername">
       <Form.Label>Username:</Form.Label>
       <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
