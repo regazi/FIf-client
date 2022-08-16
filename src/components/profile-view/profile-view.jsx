@@ -49,9 +49,7 @@ export class ProfileView extends React.Component {
           </Card.Body>
           <Button
             onClick={() => {
-              {
-                /*    this.deleteUser(this.props.userData._id);        */
-              }
+              this.deleteUser(this.props.userData._id);
               console.log(userData);
             }}
           >
