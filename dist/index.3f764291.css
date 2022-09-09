@@ -1,0 +1,52 @@
+
+.row-list {
+  color: black;
+}
+
+.btn-group > .btn-group:not(:first-child) > .btn, .btn-group > .btn:not(:first-child) {
+  display: none;
+}
+
+input[type=checkbox] {
+  box-sizing: border-box;
+  height: 4vh;
+}
+
+.togglebar {
+  width: 87%;
+}
+.main-container {
+  padding-top: 15%;
+  height: 99vh;
+}
+
+.main-container {
+  padding-top: 15%;
+  height: 99vh;
+}
+.dirHeader {
+  flex-direction: row;
+}
+
+.dirBio {
+  font-size: 1rem;
+}
+
+.accordion-button {
+  border: none;
+  width: 100%;
+  background: none;
+}
+
+.accordion-button select {
+  border: none;
+  background: blue;
+}
+
+.show {
+  padding: 2%;
+}
+.my-flix {
+  color: rgba(255, 38, 0, 0.589);
+}
+/*# sourceMappingURL=index.3f764291.css.map */

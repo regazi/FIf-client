@@ -1,0 +1,1 @@
+{"mappings":"AAAA,MAAM,MAAM,GAAG;IACX,YAAY,EAAE,yCAAyC;CAC1D","sources":["src/config.js"],"sourcesContent":["const config = {\n    MY_API_TOKEN: 'AIzaSyABbaEQenuYHQwasoLxCBC-BzCqNkjTZCk'\n}"],"names":[],"version":3,"file":"index.57397b31.js.map","sourceRoot":"/__parcel_source_root/"}
